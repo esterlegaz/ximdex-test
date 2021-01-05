@@ -19,8 +19,8 @@ class MenuItem extends React.Component {
 
   render() {
     return (
-      <li className="item__container">
-        <div className="title__container">
+      <li className='item__container'>
+        <div className='title__container'>
           <h2>{this.props.title}</h2>
           {this.state.isOpened ? (
             <ExpandLessIcon onClick={this.toggleItemClick} />
@@ -29,7 +29,7 @@ class MenuItem extends React.Component {
           )}
         </div>
         {this.state.isOpened && (
-          <p className="item__description">{this.props.description}</p>
+          <p className='item__description'>{this.props.description}</p>
         )}
       </li>
     );
