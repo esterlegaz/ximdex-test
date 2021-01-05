@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  font-family: "Tahoma";
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
