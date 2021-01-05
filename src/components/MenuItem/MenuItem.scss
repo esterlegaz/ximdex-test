@@ -1,0 +1,19 @@
+.item__container {
+  color: #6699ff;
+  list-style: none;
+  font-size: 10px;
+  max-width: 300px;
+  border-bottom: 1px solid #a1a1a1;
+}
+
+.title__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item__description {
+  color: #a1a1a1;
+  font-size: 12px;
+  margin-top: 0;
+}
