@@ -3,7 +3,6 @@ import "./Modal.scss";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -44,32 +43,30 @@ class Modal extends React.Component {
         aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>New Item Form</DialogTitle>
         <DialogContent>
-          <DialogContentText id='alert-dialog-description'>
-            <form>
-              <div>
-                <TextField
-                  required
-                  name='title'
-                  variant='outlined'
-                  label='Título'
-                  defaultValue={this.state.title}
-                  onKeyUp={this.handleChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  multilined='true'
-                  name='description'
-                  variant='outlined'
-                  label='Descripción'
-                  rows='4'
-                  defaultValue={this.state.description}
-                  onKeyUp={this.handleChange}
-                />
-              </div>
-            </form>
-          </DialogContentText>
+          <form>
+            <div className='form__input'>
+              <TextField
+                required
+                name='title'
+                variant='outlined'
+                label='Título'
+                defaultValue={this.state.title}
+                onKeyUp={this.handleChange}
+              />
+            </div>
+            <div className='form__input'>
+              <TextField
+                required
+                multilined='true'
+                name='description'
+                variant='outlined'
+                label='Descripción'
+                rows='4'
+                defaultValue={this.state.description}
+                onKeyUp={this.handleChange}
+              />
+            </div>
+          </form>
         </DialogContent>
         <DialogActions>
           <Button
