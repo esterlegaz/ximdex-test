@@ -1,24 +1,36 @@
 import React from "react";
 import "./Menu.scss";
 import MenuItem from "./../MenuItem/MenuItem";
+import { listMenuItems } from "./../../services/MenuService";
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      items: [],
+    };
+  }
+
+  componentDidMount() {
+    listMenuItems().then((data) => {
+      this.setState({
+        items: data,
+      });
+    });
   }
 
   render() {
     return (
       <ul>
-        <MenuItem
-          title="You learn more by studying alone"
-          description="Description Item 1"
-        />
-        <MenuItem
-          title="Groups should include students with the same abilities"
-          description="In fact, it is better to create groups with people of heterogeneous skills, with different abilities, in order to configure a richer and more disparate group."
-        />
+        {this.state.items.map((item, index) => {
+          return (
+            <MenuItem
+              key={index}
+              title={item.title}
+              description={item.description}
+            />
+          );
+        })}
       </ul>
     );
   }
