@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.menu__container {
+  margin-left: 20px;
+  ul {
+    padding: 0;
+  }
+}
