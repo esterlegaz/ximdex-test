@@ -14,3 +14,9 @@
   height: 35px;
   margin-right: 10px;
 }
+
+.header__title {
+  @media all and(max-width: 768px) {
+    width: 70%;
+  }
+}
