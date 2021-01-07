@@ -69,6 +69,7 @@ class Menu extends React.Component {
             return (
               <MenuItem
                 key={index}
+                id={"menu-" + index.toString()}
                 title={item.title}
                 description={item.description}
               />

@@ -12,9 +12,19 @@ class MenuItem extends React.Component {
   }
 
   toggleItemClick = () => {
-    this.setState({
-      isOpened: !this.state.isOpened,
-    });
+    this.setState(
+      {
+        isOpened: !this.state.isOpened,
+      },
+      () => {
+        const item = document.getElementById(this.props.id);
+        if (this.state.isOpened) {
+          item.classList.add("item__description");
+        } else {
+          item.classList.remove("item__description");
+        }
+      }
+    );
   };
 
   render() {
@@ -28,9 +38,9 @@ class MenuItem extends React.Component {
             <ExpandMoreIcon onClick={this.toggleItemClick} />
           )}
         </div>
-        {this.state.isOpened && (
-          <p className='item__description'>{this.props.description}</p>
-        )}
+        <p id={this.props.id} className='item__description--hidden'>
+          {this.props.description}
+        </p>
       </li>
     );
   }
