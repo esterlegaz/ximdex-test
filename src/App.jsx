@@ -7,7 +7,7 @@ function App() {
     <div className='App'>
       <header className='header__container'>
         <img src={logo} className='header__logo' alt='Ximdex logo' />
-        <h1>Ximdex Frontend Test</h1>
+        <h1 className='header__title'>Ximdex Frontend Test</h1>
       </header>
       <Menu />
     </div>
