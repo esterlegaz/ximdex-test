@@ -5,6 +5,7 @@ The following repo includes a simple frontend test developed for [Ximdex](https:
 ## Description
 
 It has been developed using React.
+It also includes the usage of [Material-UI](https://material-ui.com/) for some icons and components.
 
 ## Tasks
 
