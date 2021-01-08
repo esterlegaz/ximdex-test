@@ -29,14 +29,10 @@ class MenuItem extends React.Component {
 
   render() {
     return (
-      <li className='item__container'>
+      <li className='item__container' onClick={this.toggleItemClick}>
         <div className='title__container'>
           <h2>{this.props.title}</h2>
-          {this.state.isOpened ? (
-            <ExpandLessIcon onClick={this.toggleItemClick} />
-          ) : (
-            <ExpandMoreIcon onClick={this.toggleItemClick} />
-          )}
+          {this.state.isOpened ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </div>
         <p id={this.props.id} className='item__description--hidden'>
           {this.props.description}
