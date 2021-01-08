@@ -1,3 +1,14 @@
 .form__input {
   margin-top: 10px;
+
+  div {
+    width: 100%;
+  }
+}
+
+.modal__button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  cursor: pointer;
 }
