@@ -1,14 +1,25 @@
-import MenuMock from "./../mocks/menu-info";
-
-const MENU_ITEMS = MenuMock;
-
+let menu_items = [];
 export const listMenuItems = () => {
-  return createPromise(MENU_ITEMS);
+  return fetch("https://gorest.co.in/public-api/products")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const finalData = data.data.map((element) => {
+        const item = {
+          title: element.name,
+          description: element.description,
+        };
+        return item;
+      });
+      menu_items = finalData;
+      return finalData;
+    });
 };
 
 export const createNewItem = (newItem) => {
-  MENU_ITEMS.push(newItem);
-  return createPromise(MENU_ITEMS);
+  menu_items.push(newItem);
+  return createPromise(menu_items);
 };
 
 function createPromise(value) {

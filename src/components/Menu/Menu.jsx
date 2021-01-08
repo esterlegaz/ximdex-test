@@ -64,18 +64,20 @@ class Menu extends React.Component {
       </div>
     ) : (
       <div className='menu__container'>
-        <ul>
-          {this.state.items.map((item, index) => {
-            return (
-              <MenuItem
-                key={index}
-                id={"menu-" + index.toString()}
-                title={item.title}
-                description={item.description}
-              />
-            );
-          })}
-        </ul>
+        {this.state.items && (
+          <ul>
+            {this.state.items.map((item, index) => {
+              return (
+                <MenuItem
+                  key={index}
+                  id={"menu-" + index.toString()}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
+          </ul>
+        )}
         <Button
           onClick={this.toggleFormModal}
           variant='contained'
