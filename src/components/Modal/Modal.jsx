@@ -6,6 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import CloseIcon from "@material-ui/icons/Close";
 
 class Modal extends React.Component {
   constructor(props) {
@@ -42,6 +43,9 @@ class Modal extends React.Component {
         aria-labelledby='alert-dialog-title'
         aria-describedby='alert-dialog-description'>
         <DialogTitle id='alert-dialog-title'>New Item Form</DialogTitle>
+        <div className='modal__button'>
+          <CloseIcon onClick={this.props.onHandleClose} />
+        </div>
         <DialogContent>
           <form>
             <div className='form__input'>
@@ -57,12 +61,12 @@ class Modal extends React.Component {
             <div className='form__input'>
               <TextField
                 required
-                multilined='true'
                 name='description'
-                variant='outlined'
                 label='Descripción'
-                rows='4'
+                multiline
+                rows={4}
                 defaultValue={this.state.description}
+                variant='outlined'
                 onKeyUp={this.handleChange}
               />
             </div>
